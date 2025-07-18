@@ -1,4 +1,6 @@
 services:
+
+#  PostgreSQL Image
   postgres:
     container_name: postgres
     image: postgres:14
@@ -11,9 +13,26 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - postgres
+      - my-network
     restart: unless-stopped
 
+#    MongoDB Image
+  mongodb:
+    container_name: mongodb_container # A unique name for your MongoDB container
+    image: mongo:latest             # Use 'mongo' image (latest stable version)
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongodb  # Root username for MongoDB
+      MONGO_INITDB_ROOT_PASSWORD: Kaif12345 # Root password for MongoDB
+#      MONGO_INITDB_DATABASE: your_database # Optional: default database to create
+    volumes:
+      - mongodb_data:/data/db       # Mount a named volume for persistent data
+    ports:
+      - "27017:27017"               # Map container port 27017 to host port 27017 (default MongoDB port)
+    networks:
+      - my-network                 # Connect to a custom network (recommended)
+    restart: unless-stopped
+
+  #  PgAdmin Image
   pgadmin:
     container_name: pgadmin_container
     image: dpage/pgadmin4
@@ -26,13 +45,14 @@ services:
     ports:
       - "5050:80"
     networks:
-      - postgres
+      - my-network
     restart: unless-stopped
 
 networks:
-  postgres:
+  my-network:
     driver: bridge
 
 volumes:
   postgres:
   pgadmin:
+  mongodb_data:
