@@ -5,7 +5,7 @@ spring:
   data:
     mongodb:
 #      For-Remote DB
-      uri: mongodb+srv://mongodb:Kaif12345@user-microservice-datab.91ul3by.mongodb.net/?retryWrites=true&w=majority&appName=user-microservice-database
+      uri: mongodb+srv://<username>:<password>@user-microservice-datab.91ul3by.mongodb.net/?retryWrites=true&w=majority&appName=user-microservice-database
 #      For container based DB
 #      authentication-database: admin
       database: user-microservice-database

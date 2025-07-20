@@ -3,9 +3,11 @@ spring:
     name: Product-Microservice
     #Database configuration
   datasource:
-    url: jdbc:postgresql://localhost:5432/productDB
-    username: postgres
-    password: Kaif@12345
+#    url: jdbc:postgresql://localhost:5432/productDB
+#    Remote DB url
+    url: jdbc:postgresql://ep-gentle-base-a1039orq-pooler.ap-southeast-1.aws.neon.tech/productDB?sslmode=require&channel_binding=require'
+    username: <username>
+    password: <password>
 
   jpa:
     database: POSTGRESQL
