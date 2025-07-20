@@ -4,22 +4,10 @@ spring:
     #Database configuration
   data:
     mongodb:
-#      For-Remote DB
-      uri: mongodb+srv://<username>:<password>@user-microservice-datab.91ul3by.mongodb.net/?retryWrites=true&w=majority&appName=user-microservice-database
+      uri: mongodb+srv://mongodb:<password>@user-microservice-datab.91ul3by.mongodb.net/?retryWrites=true&w=majority&appName=user-microservice-database
 #      For container based DB
 #      authentication-database: admin
       database: user-microservice-database
-#  datasource:
-#    url: jdbc:postgresql://localhost:5432/userDB
-#    username: embarkx
-#    password: embarkx
-#
-#  jpa:
-#    database: POSTGRESQL
-#    show-sql: true
-#    hibernate:
-#      ddl-auto: update
-#    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 #Server configuration
 server:

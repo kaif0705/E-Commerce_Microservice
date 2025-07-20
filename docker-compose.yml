@@ -1,6 +1,6 @@
 services:
 
-#  PostgreSQL Image
+#  PostgreSQL Container
   postgres:
     container_name: postgres
     image: postgres:14
@@ -16,57 +16,23 @@ services:
       - my-network
     restart: unless-stopped
 
-#    MongoDB Image
-  mongodb:
-    container_name: mongodb_container # A unique name for your MongoDB container
-    image: mongo:latest             # Use 'mongo' image (latest stable version)
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: mongodb  # Root username for MongoDB
-      MONGO_INITDB_ROOT_PASSWORD: Kaif12345 # Root password for MongoDB
-#      MONGO_INITDB_DATABASE: your_database # Optional: default database to create
-    volumes:
-      - mongodb_data:/data/db       # Mount a named volume for persistent data
-    ports:
-      - "27017:27017"               # Map container port 27017 to host port 27017 (default MongoDB port)
-    networks:
-      - my-network                 # Connect to a custom network (recommended)
-    restart: unless-stopped
+#    MongoDB Container
+#  mongodb:
+#    container_name: mongodb_container # A unique name for your MongoDB container
+#    image: mongo:latest             # Use 'mongo' image (latest stable version)
+#    environment:
+#      MONGO_INITDB_ROOT_USERNAME: mongodb  # Root username for MongoDB
+#      MONGO_INITDB_ROOT_PASSWORD: Kaif12345 # Root password for MongoDB
+##      MONGO_INITDB_DATABASE: your_database # Optional: default database to create
+#    volumes:
+#      - mongodb_data:/data/db       # Mount a named volume for persistent data
+#    ports:
+#      - "27017:27017"               # Map container port 27017 to host port 27017 (default MongoDB port)
+#    networks:
+#      - my-network                 # Connect to a custom network (recommended)
+#    restart: unless-stopped
 
-#    MySQL Image
-  mysql:
-    container_name: mysql_container
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: Kaif12345
-    volumes:
-      - mysql_data:/var/lib/mysql
-    ports:
-      - "3306:3306"
-    networks:
-      - my-network
-    restart: unless-stopped
-
-#    phpMyAdmin Image
-  phpmyadmin:
-    container_name: phpmyadmin_container
-    image: phpmyadmin/phpmyadmin:latest # Official phpMyAdmin Docker image
-    environment:
-      # This is the hostname of your MySQL service within the Docker network
-      # It MUST match the service name you gave your MySQL container in this docker-compose file
-      PMA_HOST: mysql
-      # PMA_PORT: 3306 # Optional, 3306 is default and usually not needed to specify
-      # PMA_ARBITRARY: 1 # Set to 1 if you want to connect to any host, not just PMA_HOST
-      # PMA_USER: root # Optional: pre-fills the login form with root user
-      # PMA_PASSWORD: MySqlP@ssword # Optional: pre-fills the login form with root password
-    links:
-      - mysql:db # Link to the MySQL service; 'db' is an alias within phpMyAdmin
-    ports:
-      - "8080:80" # Map host port 8080 to container port 80 (default for phpMyAdmin web server)
-    networks:
-      - my-network # Connect to the same custom network as your MySQL service
-    restart: unless-stopped
-
-  #  PgAdmin Image
+  #  PgAdmin Container
   pgadmin:
     container_name: pgadmin_container
     image: dpage/pgadmin4
@@ -89,5 +55,4 @@ networks:
 volumes:
   postgres:
   pgadmin:
-  mongodb_data:
-  mysql_data:
+#  mongodb_data:
