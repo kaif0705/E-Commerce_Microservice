@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: Order-Microservice
+    #Database configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/orderDB
+    username: postgres
+    password: Kaif@12345
+
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+      format-sql: true
+
+#Server configuration
+server:
+  port: 8083
