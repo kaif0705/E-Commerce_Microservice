@@ -1,14 +1,20 @@
 spring:
   application:
-    name: user-service
+    name: User-Microservice
+#    Connect to config server
+  config:
+    import: configserver:http://localhost:8888
+#    Profile
+  profiles:
+    active: dev
     #Database configuration
   data:
     mongodb:
-      uri: mongodb+srv://mongodb:<password>@user-microservice-datab.91ul3by.mongodb.net/?retryWrites=true&w=majority&appName=user-microservice-database
+      uri: ${uri}
 #      For container based DB
 #      authentication-database: admin
       database: user-microservice-database
 
 #Server configuration
 server:
-  port: 8082
+  port: ${USER_PORT_NO}
