@@ -48,6 +48,21 @@ services:
       - my-network
     restart: unless-stopped
 
+#    RabbitMQ
+  rabbitmq:
+    container_name: rabbitmq_container
+    image: rabbitmq:3-management # Use the management image to get the web UI
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_DEFAULT_USER:-guest} # Default user, can be overridden by .env
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_DEFAULT_PASS:-guest} # Default pass, can be overridden by .env
+    ports:
+      - "5672:5672" # Standard AMQP port
+      - "15672:15672" # Management UI port
+    networks:
+      - my-network
+    restart: unless-stopped
+
+
 networks:
   my-network:
     driver: bridge
@@ -55,4 +70,5 @@ networks:
 volumes:
   postgres:
   pgadmin:
+  rabbitmq:
 #  mongodb_data:
