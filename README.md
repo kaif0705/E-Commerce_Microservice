@@ -44,3 +44,45 @@ The application is built around the following microservices and architectural pa
 7. Build Tool: Apache Maven
 8. Containerization: Docker
 
+**Getting Started**
+These instructions will get a copy of the project up and running on your local machine.
+
+**Prerequisites**
+1. Java Development Kit (JDK) 17+
+2. Apache Maven 3.6+
+3. Docker and Docker Compose
+
+**API Endpoints**
+| Service | Method | Endpoint | Description |
+| :--- | :--- | :--- | :--- |
+| **User** | GET | `/users/{id}` | Get a user by ID |
+| | GET | `/users` | Get all users |
+| | POST | `/users` | Add a new user |
+| | PUT | `/users/{id}` | Update an existing user |
+| | | | |
+| **Product** | POST | `/products` | Add a new product |
+| | GET | `/products` | Get all products |
+| | GET | `/products/{id}` | Get a product by ID |
+| | GET | `/products/search` | Get products by keyword |
+| | PUT | `/products/{id}` | Update a product |
+| | DELETE | `/products/{id}` | Delete a product |
+| | | | |
+| **Cart** | POST | `/cart` | Add a product to the cart |
+| | GET | `/cart/{userId}` | Get a user's cart |
+| | DELETE | `/cart/{userId}/items/{productId}` | Delete a product from the cart |
+| | | | |
+| **Orders** | POST | `/orders` | Place a new order |
+
+
+**Future Enhancements**
+1. API Gateway: Implement an API Gateway (e.g., Spring Cloud Gateway) to handle all incoming requests and provide a single entry point.
+2. Circuit Breakers: Integrate a circuit breaker library (e.g., Resilience4j) to improve system resilience.
+3. Distributed Tracing: Add distributed tracing with Spring Cloud Sleuth and Zipkin to monitor request flow across services.
+4. Container Orchestration: Deploy the microservices using Kubernetes for production-grade orchestration.
+
+**Contact**
+You can reach me at:
+1. [[LinkedIn]](https://www.linkedin.com/in/mohammedkaif07/)
+
+
+
