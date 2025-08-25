@@ -19,8 +19,6 @@ This application simulates a basic e-commerce platform with separate microservic
 
 6. Inter-Service Communication: Services communicate with each other via efficient and load-balanced REST calls.
 
-**Architectural Overview**
-
 ### Architectural Overview
 
 The application is built around the following microservices and architectural patterns:
@@ -34,7 +32,7 @@ The application is built around the following microservices and architectural pa
 | **User** | **User Management:** Handles user-related data and authentication. | Spring Boot, Spring Data MongoDB, MongoDB |
 
 
-**Technologies Used**
+### Technologies Used
 1. Framework: Spring Boot 3.5.4
 2. Service Discovery: Spring Cloud Netflix Eureka
 3. Configuration: Spring Cloud Config
@@ -44,15 +42,15 @@ The application is built around the following microservices and architectural pa
 7. Build Tool: Apache Maven
 8. Containerization: Docker
 
-**Getting Started**
+### Getting Started
 These instructions will get a copy of the project up and running on your local machine.
 
-**Prerequisites**
+### Prerequisites
 1. Java Development Kit (JDK) 17+
 2. Apache Maven 3.6+
 3. Docker and Docker Compose
 
-**API Endpoints**
+### API Endpoints
 | Service | Method | Endpoint | Description |
 | :--- | :--- | :--- | :--- |
 | **User** | GET | `/users/{id}` | Get a user by ID |
@@ -74,13 +72,13 @@ These instructions will get a copy of the project up and running on your local m
 | **Orders** | POST | `/orders` | Place a new order |
 
 
-**Future Enhancements**
+### Future Enhancements
 1. API Gateway: Implement an API Gateway (e.g., Spring Cloud Gateway) to handle all incoming requests and provide a single entry point.
 2. Circuit Breakers: Integrate a circuit breaker library (e.g., Resilience4j) to improve system resilience.
 3. Distributed Tracing: Add distributed tracing with Spring Cloud Sleuth and Zipkin to monitor request flow across services.
 4. Container Orchestration: Deploy the microservices using Kubernetes for production-grade orchestration.
 
-**Contact**
+### Contact
 You can reach me at:
 1. [[LinkedIn]](https://www.linkedin.com/in/mohammedkaif07/)
 
