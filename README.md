@@ -2,11 +2,11 @@
 
 This project is a microservices-based e-commerce application demonstrating key patterns and technologies for building scalable, resilient, and maintainable distributed systems with Spring Boot and Spring Cloud.
 
-**About the Project**
+###About the Project
 
 This application simulates a basic e-commerce platform with separate microservices for managing orders, products, and users. The architecture is designed to be highly scalable and loosely coupled, with each service having its own domain and data store.
 
-**Core Functionality**
+### Core Functionality
 1. User Management: Register, authenticate, and manage user profiles.
 
 2. Product Catalog: Browse and retrieve product details.
