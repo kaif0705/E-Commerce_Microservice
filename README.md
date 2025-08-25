@@ -1,4 +1,4 @@
-                                                E-COMMERCE MICROSERVICES APPLICATION
+                                            E-COMMERCE MICROSERVICES APPLICATION
 
 This project is a microservices-based e-commerce application demonstrating key patterns and technologies for building scalable, resilient, and maintainable distributed systems with Spring Boot and Spring Cloud.
 
