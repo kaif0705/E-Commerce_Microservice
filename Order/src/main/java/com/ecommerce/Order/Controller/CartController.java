@@ -24,7 +24,7 @@ public class CartController {
         if (!cartService.addToCart(userId, request)) {
             return ResponseEntity.badRequest().body("Product Out of Stock or User not found or Product not found");
         }
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+        return ResponseEntity.status(HttpStatus.CREATED).body("Product Added with ID: " + request.getProductId());
     }
 
     @DeleteMapping("/items/{productId}")

@@ -1,4 +1,4 @@
-package com.ecommerce.User.Payload;
+package com.ecommerce.Order.SharedContracts.User;
 
 import lombok.Data;
 
