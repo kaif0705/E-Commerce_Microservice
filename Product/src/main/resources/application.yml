@@ -40,3 +40,12 @@ management:
   endpoint:
     shutdown:
       enabled: true
+
+#Logging
+logging:
+  file:
+    name: log/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      max-file-size: 5MB
+      max-history: 7

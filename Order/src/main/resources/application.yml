@@ -43,8 +43,9 @@ management:
 
 #Logging
 logging:
-  level:
-    root: INFO # Sets the default logging level for all loggers
-    Order-Microservice: DEBUG # Sets the logging level for your specific application package to DEBUG
-    org.springframework: INFO # Sets the logging level for Spring framework components
-    org.hibernate: INFO
+  file:
+    name: log/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      max-file-size: 5MB
+      max-history: 7
