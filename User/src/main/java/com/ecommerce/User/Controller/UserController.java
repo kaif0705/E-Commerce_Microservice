@@ -22,7 +22,7 @@ public class UserController {
     private final UserService userService;
 
 //    private static final Logger log= LoggerFactory.getLogger(UserController.class);
-    
+
     @GetMapping("/{id}")
     public ResponseEntity<UserResponse> getUser(@PathVariable String id){
         log.info("Request received for user: {}", id);
