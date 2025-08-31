@@ -40,6 +40,9 @@ management:
   endpoint:
     shutdown:
       enabled: true
+  tracing:
+    sampling:
+      probability: 1.0
 
 #Logging
 logging:

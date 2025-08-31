@@ -36,6 +36,9 @@ management:
   endpoint:
     shutdown:
       enabled: true
+  tracing:
+    sampling:
+      probability: 1.0 #Traces 100% of the request passing through this service
 
 #Logging
 logging:
