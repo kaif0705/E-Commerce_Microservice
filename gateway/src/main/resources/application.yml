@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        #Defining routes for product service
+        - id: PRODUCT-MICROSERVICE #ID of the service where the request should be route
+          uri: http://localhost:8081 #Address of the service
+          predicates: #Conditions a request must fulfill before entering
+            - Path=/api/products/** #If any requests matches this path, they are granted access #Defining routes for product service
+        #Defining routes for order service
+        - id: ORDER-MICROSERVICE
+          uri: http://localhost:8083
+          predicates:
+            - Path=/api/orders/** , /api/cart/** #As we have 2 controllers in ORDER-MICROSERVICE
+        #Defining routes for user service
+        - id: USER-MICROSERVICE
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/users/**
+
+server:
+  port: 8080
